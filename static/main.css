@@ -1,4 +1,6 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@800&display=swap');
+
 
 *{
   margin: 0;
@@ -83,7 +85,7 @@ a{
   position: absolute;
   display: inline-block;
   padding: 25px 30px;
-  color: #f40373;
+  color: #33ff00;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.5s;
@@ -98,12 +100,12 @@ a{
   
 }
 a:hover{
-  background: #03e9f4;
+  background: #fca8f5;
   color: #050801;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 200px #03e9f4;
+  box-shadow: 0 0 5px #fca8f5,
+              0 0 25px #fca8f5,
+              0 0 50px #fca8f5,
+              0 0 200px #fca8f5;
    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
 a:nth-child(1){
@@ -121,7 +123,7 @@ a span:nth-child(1){
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg,transparent,#03e9f4);
+  background: linear-gradient(90deg,transparent,#efff0c);
   animation: animate1 1s linear infinite;
 }
 @keyframes animate1{
@@ -137,7 +139,7 @@ a span:nth-child(2){
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg,transparent,#03e9f4);
+  background: linear-gradient(180deg,transparent,#ff0000);
   animation: animate2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -154,7 +156,7 @@ a span:nth-child(3){
   right: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg,transparent,#03e9f4);
+  background: linear-gradient(270deg,transparent,#94fa0e);
   animation: animate3 1s linear infinite;
   animation-delay: 0.50s;
 }
@@ -173,7 +175,7 @@ a span:nth-child(4){
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg,transparent,#03e9f4);
+  background: linear-gradient(360deg,transparent,#ff3434);
   animation: animate4 1s linear infinite;
   animation-delay: 0.75s;
 }
@@ -186,8 +188,30 @@ a span:nth-child(4){
   }
 }
 
-
-
+.logo {
+  position: relative;
+  display: flex;
+  margin: 20px auto;
+  padding-left: 50px;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+}
+.logo span {
+  position: relative;
+  display: flex;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i))
+}
+@keyframes logo {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
 
 
 
@@ -255,6 +279,7 @@ a span:nth-child(4){
 
 .logo-1 {
   position: relative;
+  margin: 20px auto;
   -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
 }
 .logo-1 span {
@@ -334,7 +359,7 @@ h3 {
   bottom: 20px;
   border:none;
   width: 130px;
-  height: 40px;
+  height: 60px;
   line-height: 40px;
   -webkit-perspective: 230px;
   perspective: 230px;
@@ -395,7 +420,10 @@ h3 {
   color: #00aced;
   border: none;
   z-index: 2;
-  padding: 15px 60px;
+  padding-top: 8px;
+  padding-right: 60px;
+  padding-bottom: 17px;
+  padding-left: 60px;
   background: transparent;
   transition: all 0.3s ease;
   cursor : pointer
@@ -436,4 +464,73 @@ h3 {
   height: 100%;
   width: 100%;
   box-shadow: 0 0 5px #00aced, 0 0 5px #00aced inset;
+}
+
+footer {
+  position: relative;
+  width : 100%;
+  background : #3586ff;
+  padding : 20px 50px;
+  min-height : 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .wave {
+  position: absolute;
+  top : -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(wave.png);
+  background-size: 1000px 100px;
+}
+footer .wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom : 0;
+  animation : animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom : 10px;
+  animation : animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom : 15px;
+  animation : animateWave 3s linear infinite;
+}
+
+footer .wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom : 20px;
+  animation : animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+  
+}
+
+@keyframes animateWave_02 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+  
 }
