@@ -81,111 +81,151 @@ body {
 
 
 /* buttons */
-a{
-  position: absolute;
-  display: inline-block;
-  padding: 25px 30px;
-  color: #33ff00;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: 0.5s;
-  letter-spacing: 4px;
-  overflow: hidden;
-  font-weight: 600;
-  justify-content: center;
-  top : 50%;
-  left : 50%;
-  transform: translate(-50%,-50%);
-  font-size: 20px;
+::-moz-selection {
+  background-color: rgba(0,0,0,0.21);
+  color: #fff;
 }
-a:hover{
-  background: #fca8f5;
-  color: #050801;
-  box-shadow: 0 0 5px #fca8f5,
-              0 0 25px #fca8f5,
-              0 0 50px #fca8f5,
-              0 0 200px #fca8f5;
-   -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+::selection {
+  background-color: rgba(0,0,0,0.21);
+  color: #fff;
 }
-a:nth-child(1){
-  filter: hue-rotate(270deg);
+::-moz-selection {
+  background-color: rgba(0,0,0,0.21);
+  color: #fff;
 }
-a:nth-child(2){
-  filter: hue-rotate(110deg);
+#interaction {
+  top: 50%;
+  left: 50%;
+  width: 84px;
+  height: 84px;
+  margin-top: -42px;
+  margin-left: -42px;
+  transform: rotate(45deg);
 }
-a span{
-  position: absolute;
+#interaction,
+#interaction *,
+#interaction *:before {
   display: block;
+  position: absolute;
 }
-a span:nth-child(1){
+#interaction .interaction-3,
+#interaction .dot {
   top: 0;
   left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg,transparent,#efff0c);
-  animation: animate1 1s linear infinite;
-}
-@keyframes animate1{
-  0%{
-      left: -100%;
-  }
-  50%,100%{
-      left: 100%;
-  }
-}
-a span:nth-child(2){
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg,transparent,#ff0000);
-  animation: animate2 1s linear infinite;
-  animation-delay: 0.25s;
-}
-@keyframes animate2{
-  0%{
-      top: -100%;
-  }
-  50%,100%{
-      top: 100%;
-  }
-}
-a span:nth-child(3){
   bottom: 0;
   right: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg,transparent,#94fa0e);
-  animation: animate3 1s linear infinite;
-  animation-delay: 0.50s;
 }
-@keyframes animate3{
-  0%{
-      right: -100%;
+#interaction .interaction-3 {
+  border: 18px solid #f35635;
+  border-radius: 50%;
+}
+#interaction .dot {
+  -webkit-animation: dotRotate 4.8s linear infinite;
+          animation: dotRotate 4.8s linear infinite;
+}
+#interaction .dot:before {
+  content: '';
+  top: -42px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-radius: 50%;
+  background-color: #f35635;
+  -webkit-animation: dotEffect 1.2s ease-in-out infinite;
+          animation: dotEffect 1.2s ease-in-out infinite;
+}
+@-webkit-keyframes dotEffect {
+  50% {
+    top: 102px;
   }
-  50%,100%{
-      right: 100%;
+  0%, 50%, 100% {
+    transform: scale(1);
   }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+}
+@keyframes dotEffect {
+  50% {
+    top: 102px;
+  }
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes dotRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dotRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#text {
+  top: 50%;
+  left: 50%;
+  width: 182px;
+  height: 182px;
+  margin-top: -91px;
+  margin-left: -91px;
+}
+#text,
+#text > * {
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#text .hover
+ {
+  top: 100%;
+  left: 50%;
+  letter-spacing: 2px;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.63);
 }
 
+#text .interaction,
+#text .interaction-2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 182px;
+  letter-spacing: 30px;
+  color: #fff;
+  opacity: 0;
+}
+#text .interaction {
+  right: 100%;
+  margin-right: -34px;
+}
+#text .interaction-2 {
+  left: 100%;
+}
+#text:hover .interaction,
+#text:hover .interaction-2 {
+  letter-spacing: 14px;
+  opacity: 1;
+}
+#text:hover .interaction {
+  margin-right: -18px;
+}
+#text:hover .hover {
+  margin-top: 28px;
+  opacity: 0;
+}
 
-a span:nth-child(4){
-  bottom: -100%;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg,transparent,#ff3434);
-  animation: animate4 1s linear infinite;
-  animation-delay: 0.75s;
-}
-@keyframes animate4{
-  0%{
-      bottom: -100%;
-  }
-  50%,100%{
-      bottom: 100%;
-  }
-}
 
 
 
